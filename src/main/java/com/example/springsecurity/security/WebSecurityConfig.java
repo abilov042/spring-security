@@ -43,6 +43,7 @@ public class WebSecurityConfig {
                         auth
                                 .requestMatchers("/v1/auth/**").permitAll()
                                 .requestMatchers(permitSwagger).permitAll()
+                                .requestMatchers("/test").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 );
 
